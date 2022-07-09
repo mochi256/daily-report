@@ -6,10 +6,11 @@ make to daily report.
 git clone git@github.com:mochi256/daily-report.git
 mkdir -p ~/.local/bin
 export PATH=$PATH:$HOME/.local/bin
-mv $HOME/.daily-report/report.py $HOME/.local/bin/report
+mv daily-report/report.py $HOME/.local/bin/report
 
 mkdir $HOME/report
 export REPORT_DIR=$HOME/report
+mv daily-report/.template $REPORT_DIR/
 
 report
 ```
