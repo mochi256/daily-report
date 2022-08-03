@@ -31,6 +31,11 @@ if __name__ == "__main__":
             os.mkdir(target_dir)
         subprocess.run(["mv", "{0}/{1}".format(REPORT_DIR, f), target_dir])
     
+    today_report = "{0}/{1}.md".format(REPORT_DIR, CURRENT_DATE_STR)
+    if os.path.exists(today_report):
+        subprocess.run(["open", today_report])
+        sys.exit(0)
+
     # 過去の日報のコピー
     history = list(set([
         (CURRENT_DATE - timedelta(weeks=m)).strftime("%Y-%m") for m in range(12)
